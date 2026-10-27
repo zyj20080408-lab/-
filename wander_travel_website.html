@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f7f4ed">
+<title>WANDER｜把世界走成自己的樣子</title>
+<style>
+:root{--ink:#172b2b;--muted:#667573;--paper:#f7f4ed;--green:#244c43;--lime:#d8ef8a;--orange:#e58b61;--line:rgba(23,43,43,.14);--serif:Georgia,"Noto Serif TC",serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,"Noto Sans TC",system-ui,-apple-system,sans-serif}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}.wrap{width:min(1180px,calc(100% - 48px));margin:auto}
+nav{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{font-size:1.15rem;font-weight:900;letter-spacing:.18em}.brand span{color:#7e9b62}.navlinks{display:flex;gap:30px;color:#566764;font-size:.88rem}.navright{display:flex;align-items:center;gap:18px}.lang{font-size:.8rem;color:var(--muted)}.menu{display:none;background:none;border:0;font-size:1.5rem}
+.hero{padding:66px 0 54px;display:grid;grid-template-columns:1.02fr .98fr;gap:42px;align-items:center}.eyebrow{display:flex;align-items:center;gap:10px;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:#68816e;font-weight:800}.eyebrow:before{content:"";width:28px;height:1px;background:#68816e}.hero h1{font-family:var(--serif);font-size:clamp(3.4rem,7vw,6.7rem);line-height:.98;letter-spacing:-.065em;font-weight:500;margin:24px 0}.hero h1 em{font-weight:400;color:#6e8a6e}.hero p{max-width:440px;color:var(--muted);line-height:1.9;font-size:1rem}.hero-actions{display:flex;align-items:center;gap:20px;margin-top:30px}.btn{border:0;border-radius:100px;padding:15px 22px;background:var(--green);color:white;font-weight:700;display:inline-flex;align-items:center;gap:16px;transition:.2s}.btn:hover{transform:translateY(-2px);background:#17372f}.textlink{font-size:.9rem;font-weight:700;border-bottom:1px solid var(--ink);padding-bottom:4px}.hero-art{height:540px;position:relative;overflow:hidden;border-radius:48% 48% 14px 14px;background:linear-gradient(155deg,#d3dfd0 0%,#8cae9b 43%,#4b766d 100%)}.hero-art:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(13,38,35,.55))}.sun{position:absolute;top:14%;right:19%;width:105px;height:105px;border-radius:50%;background:#f4dca7;box-shadow:0 0 60px #f4dca755}.mountain{position:absolute;bottom:0;width:0;height:0;border-left:260px solid transparent;border-right:260px solid transparent;border-bottom:300px solid #547d72;left:-12%;filter:drop-shadow(50px 20px 0 #75988a)}.mountain.two{left:30%;bottom:-30px;border-left-width:300px;border-right-width:300px;border-bottom-width:390px;border-bottom-color:#2f5c51;filter:none}.water{position:absolute;bottom:0;left:0;right:0;height:32%;background:linear-gradient(180deg,#6f9c8d,#315e55);clip-path:polygon(0 20%,100% 0,100% 100%,0 100%)}.water:after{content:"";position:absolute;top:32%;left:12%;width:70%;height:2px;background:#d9e7cf;opacity:.55;box-shadow:70px 28px 0 #d9e7cf,190px 62px 0 #d9e7cf,20px 85px 0 #d9e7cf}.art-label{position:absolute;z-index:2;bottom:28px;left:28px;color:white}.art-label small{letter-spacing:.2em;font-size:.7rem}.art-label h3{font-family:var(--serif);font-size:2rem;font-weight:400;margin:8px 0}.floating{position:absolute;z-index:3;top:15%;left:-18px;background:#fffdf7;padding:16px 18px;border-radius:14px;box-shadow:0 15px 35px #163b3020;font-size:.8rem}.floating strong{display:block;font-size:1.3rem;margin-bottom:3px}.side-note{position:absolute;right:18px;top:50%;writing-mode:vertical-rl;color:#f7f4ed;font-size:.68rem;letter-spacing:.22em}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;margin-bottom:95px}.stat{padding-left:28px;border-left:1px solid var(--line)}.stat:first-child{padding-left:0;border:0}.stat strong{font-family:var(--serif);font-size:2rem;font-weight:500}.stat span{display:block;color:var(--muted);font-size:.82rem;margin-top:4px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px}.section-head h2{font-family:var(--serif);font-size:clamp(2.3rem,4vw,3.7rem);font-weight:500;letter-spacing:-.04em;margin:12px 0 0}.section-head p{max-width:350px;color:var(--muted);line-height:1.8;font-size:.9rem}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:26px 0}.filter{padding:9px 16px;border-radius:99px;border:1px solid var(--line);background:transparent;color:var(--muted);font-size:.82rem}.filter.active,.filter:hover{background:var(--green);color:white;border-color:var(--green)}
+.destinations{display:grid;grid-template-columns:1.12fr .88fr .88fr;gap:18px}.destination{min-width:0}.photo{height:350px;border-radius:14px;position:relative;overflow:hidden;background:#d6dfd3}.destination:first-child .photo{height:420px}.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(10,30,27,.55))}.photo .num{position:absolute;z-index:2;top:16px;left:16px;background:#fffdf0d9;border-radius:99px;padding:7px 11px;font-size:.72rem}.photo .scene{position:absolute;inset:0;transition:transform .5s}.destination:hover .scene{transform:scale(1.05)}.scene.taipei{background:linear-gradient(180deg,#b7d0d2 0 38%,#8daaa0 38% 48%,#536e64 48% 100%)}.scene.taipei:before{content:"";position:absolute;bottom:0;left:0;right:0;height:64%;background:repeating-linear-gradient(90deg,#344e4a 0 18px,#6e8980 18px 27px,#263e3b 27px 44px);clip-path:polygon(0 38%,8% 38%,8% 14%,17% 14%,17% 46%,26% 46%,26% 0,36% 0,36% 35%,48% 35%,48% 18%,57% 18%,57% 52%,68% 52%,68% 8%,78% 8%,78% 39%,89% 39%,89% 23%,100% 23%,100% 100%,0 100%)}.scene.taipei:after{content:"101";position:absolute;bottom:43%;left:39%;font-size:1.2rem;font-weight:900;color:#d8e7cf;writing-mode:vertical-rl;letter-spacing:.2em}.scene.coast{background:linear-gradient(155deg,#c9e2e1 0 35%,#7ba9a0 36% 53%,#e4c8a2 54% 59%,#5b8b83 60%)}.scene.coast:before{content:"";position:absolute;width:140%;height:60%;left:-20%;bottom:-20%;background:#e7d3ae;border-radius:50% 50% 0 0;transform:rotate(-10deg)}.scene.forest{background:linear-gradient(180deg,#c9d8c7,#719483 45%,#274e42)}.scene.forest:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(100deg,transparent 0 30px,#24483b 31px 47px,transparent 48px 75px);clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}.scene.forest:after{content:"";position:absolute;left:20%;right:20%;bottom:0;height:60%;background:linear-gradient(90deg,#c4d5bb,#547e67,#d0dec2);clip-path:polygon(45% 0,57% 0,100% 100%,0 100%);opacity:.7}.dest-info{display:flex;justify-content:space-between;gap:12px;align-items:start;padding:16px 2px}.dest-info h3{margin:0;font-size:1.15rem}.dest-info p{margin:6px 0 0;color:var(--muted);font-size:.8rem}.arrow{width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;flex-shrink:0}
+.journal{margin:105px 0;background:var(--green);color:#f7f4ed;border-radius:20px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center;overflow:hidden;position:relative}.journal:after{content:"W";position:absolute;right:2%;bottom:-55%;font-family:var(--serif);font-size:28rem;color:#ffffff08;pointer-events:none}.journal h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.3rem,4vw,4rem);line-height:1.05;margin:15px 0}.journal p{color:#d2ded5;line-height:1.8;max-width:420px}.journal .btn{background:var(--lime);color:var(--ink);position:relative;z-index:1}.journal-art{height:270px;position:relative;border-radius:12px;overflow:hidden;background:linear-gradient(145deg,#e7c8a3,#91b4a1 48%,#426c5c)}.journal-art:before{content:"";position:absolute;inset:0;background:linear-gradient(140deg,transparent 30%,#2e5b4a 31% 55%,transparent 56%),linear-gradient(35deg,#d7e2c8 0 25%,transparent 26%)}.journal-art:after{content:"SLOW TRAVEL / VOL. 01";position:absolute;bottom:18px;left:20px;color:white;letter-spacing:.22em;font-size:.7rem}
+.newsletter{display:flex;justify-content:space-between;align-items:center;gap:28px;padding:20px 0 70px}.newsletter h3{font-family:var(--serif);font-size:2rem;font-weight:400;margin:0 0 8px}.newsletter p{margin:0;color:var(--muted);font-size:.88rem}.subscribe{display:flex;gap:8px;width:min(430px,100%)}.subscribe input{min-width:0;flex:1;border:1px solid var(--line);background:transparent;padding:14px 16px;border-radius:99px;outline:none}.subscribe input:focus{border-color:var(--green)}.subscribe button{border:0;border-radius:99px;background:var(--green);color:white;padding:0 20px;font-weight:700}
+footer{border-top:1px solid var(--line);padding:25px 0 35px;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:.78rem}.footer-links{display:flex;gap:20px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;background:#172b2b;color:white;padding:13px 18px;border-radius:99px;font-size:.85rem;transition:.25s;pointer-events:none;z-index:20}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:850px){.navlinks{display:none}.menu{display:block}.hero{grid-template-columns:1fr;padding-top:44px}.hero-art{height:420px;margin:0 10px 0 20px}.hero h1{font-size:clamp(3.5rem,15vw,5.5rem)}.stats{margin-bottom:70px}.destinations{grid-template-columns:1fr 1fr}.destination:first-child{grid-column:span 2}.destination:first-child .photo{height:340px}.photo{height:300px}.journal{grid-template-columns:1fr;padding:32px}.journal-art{height:220px}.newsletter{align-items:flex-start;flex-direction:column}}
+@media(max-width:520px){.wrap{width:calc(100% - 32px)}nav{height:68px}.lang{display:none}.hero{gap:28px;padding-top:36px}.hero p{font-size:.92rem}.hero-art{height:360px;margin-left:12px}.floating{left:-12px;top:12%;padding:12px}.floating strong{font-size:1.1rem}.stats{padding:18px 0;margin-bottom:60px}.stat{padding-left:12px}.stat strong{font-size:1.55rem}.stat span{font-size:.7rem}.section-head{display:block}.section-head p{margin-bottom:0}.destinations{grid-template-columns:1fr}.destination:first-child{grid-column:auto}.destination:first-child .photo,.photo{height:320px}.journal{margin:70px 0;padding:25px}.subscribe{width:100%}.subscribe button{padding:0 15px}footer{flex-direction:column}.footer-links{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <nav aria-label="主導覽">
+    <a class="brand" href="#top">WANDER<span>®</span></a>
+    <div class="navlinks"><a href="#destinations">探索目的地</a><a href="#journal">旅行靈感</a><a href="#about">關於我們</a></div>
+    <div class="navright"><span class="lang">TW / 繁體中文</span><a class="textlink" href="#destinations">開始探索 ↗</a><button class="menu" aria-label="開啟導覽" onclick="document.querySelector('.navlinks').classList.toggle('mobile-open');let n=document.querySelector('.navlinks');n.style.display=n.style.display==='flex'?'none':'flex';n.style.flexDirection='column';n.style.position='absolute';n.style.top='68px';n.style.left='16px';n.style.right='16px';n.style.padding='20px';n.style.background='#f7f4ed';n.style.zIndex='10';">☰</button></div>
+  </nav>
+</header>
+<main id="top">
+<section class="hero wrap">
+  <div>
+    <div class="eyebrow">Find your own elsewhere</div>
+    <h1>把世界<br>走成<span>自己的</span><br><em>樣子。</em></h1>
+    <p>旅行不只是抵達某個地方，而是用新的風景，重新認識生活。從城市的喧鬧到山海的寧靜，找到屬於你的下一段故事。</p>
+    <div class="hero-actions"><a class="btn" href="#destinations">探索目的地 <span>↗</span></a><a class="textlink" href="#journal">閱讀旅行誌</a></div>
+  </div>
+  <div class="hero-art" role="img" aria-label="以夕陽、山巒與湖面構成的旅行風景插畫">
+    <div class="sun"></div><div class="mountain"></div><div class="mountain two"></div><div class="water"></div>
+    <div class="floating"><strong>01 / 03</strong>下一站，去遠方</div>
+    <div class="side-note">TAIWAN · SLOW DOWN · BREATHE</div>
+    <div class="art-label"><small>EDITOR'S PICK · TAIWAN</small><h3>山海之間，慢慢生活</h3></div>
+  </div>
+</section>
+<div class="wrap stats">
+  <div class="stat"><strong>24<span style="display:inline;font-size:1rem">+</span></strong><span>精選旅行靈感</span></div>
+  <div class="stat"><strong>06</strong><span>種旅行風格提案</span></div>
+  <div class="stat"><strong>∞</strong><span>種探索世界的方式</span></div>
+</div>
+<section class="wrap" id="destinations">
+  <div class="section-head"><div><div class="eyebrow">Curated escapes</div><h2>你的下一站，<br>會是哪裡？</h2></div><p>不必一次走遍世界。挑一個讓你心動的地方，從一段風景、一杯咖啡，開始自己的旅程。</p></div>
+  <div class="filters" role="group" aria-label="目的地篩選">
+    <button class="filter active" data-filter="all">全部靈感</button><button class="filter" data-filter="city">城市漫遊</button><button class="filter" data-filter="nature">山海自然</button><button class="filter" data-filter="slow">慢活療癒</button>
+  </div>
+  <div class="destinations">
+    <article class="destination" data-category="city slow"><div class="photo"><div class="scene taipei"></div><span class="num">01 / CITY LIFE</span></div><div class="dest-info"><div><h3>台北・城市散步</h3><p>巷弄咖啡、夜市與城市光影</p></div><a class="arrow" href="#journal" aria-label="閱讀台北旅行靈感">↗</a></div></article>
+    <article class="destination" data-category="nature"><div class="photo"><div class="scene coast"></div><span class="num">02 / OCEAN AIR</span></div><div class="dest-info"><div><h3>花蓮・海岸日常</h3><p>把時間留給海風與太平洋</p></div><a class="arrow" href="#journal" aria-label="閱讀花蓮旅行靈感">↗</a></div></article>
+    <article class="destination" data-category="nature slow"><div class="photo"><div class="scene forest"></div><span class="num">03 / INTO GREEN</span></div><div class="dest-info"><div><h3>阿里山・森林呼吸</h3><p>雲霧、林間步道與日出</p></div><a class="arrow" href="#journal" aria-label="閱讀阿里山旅行靈感">↗</a></div></article>
+  </div>
+</section>
+<section class="journal wrap" id="journal">
+  <div><div class="eyebrow" style="color:var(--lime)">The travel journal</div><h2>走慢一點，<br>看見更多。</h2><p>精選路線、在地故事與旅行提案。讓每次出發都不只是打卡，而是與這個世界建立更深一點的連結。</p><a href="#newsletter" class="btn">收下旅行靈感 <span>↗</span></a></div>
+  <div class="journal-art" role="img" aria-label="山林與大地色系的旅行編輯封面"></div>
+</section>
+<section class="wrap newsletter" id="newsletter"><div><h3>把遠方，寄給自己。</h3><p>訂閱 WANDER 旅行信，偶爾收到值得出發的理由。</p></div><form class="subscribe" id="subscribeForm"><input id="email" type="email" placeholder="輸入你的 Email" aria-label="電子郵件地址" required><button type="submit">訂閱 ↗</button></form></section>
+</main>
+<footer class="wrap" id="about"><span>© 2026 WANDER STUDIO. MADE FOR THE CURIOUS.</span><div class="footer-links"><a href="#top">回到頂部 ↑</a><a href="#destinations">探索目的地</a><a href="#journal">旅行誌</a></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const filters=document.querySelectorAll('.filter');
+const cards=document.querySelectorAll('.destination');
+filters.forEach(btn=>btn.addEventListener('click',()=>{
+  filters.forEach(f=>f.classList.remove('active'));btn.classList.add('active');
+  const filter=btn.dataset.filter;
+  cards.forEach(card=>{card.style.display=(filter==='all'||card.dataset.category.split(' ').includes(filter))?'':'none';});
+}));
+const toast=document.getElementById('toast');
+function showToast(message){toast.textContent=message;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2800);}
+document.getElementById('subscribeForm').addEventListener('submit',e=>{
+  e.preventDefault();const email=document.getElementById('email').value;
+  showToast('感謝訂閱！示範網站尚未連接寄信服務。');e.target.reset();
+});
+</script>
+</body>
+</html>
